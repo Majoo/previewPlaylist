@@ -1,0 +1,21 @@
+<template name="home">
+  <h1>PreviewMyPlaylist</h1>
+
+  {{> urlForm}}
+
+  {{> auth}}
+</template>
+
+<template name="urlForm">
+  <form>
+		  <label for="url"> Playlist URL:</label>
+			<input id="url" type="text" value="https://play.spotify.com/user/chorriballong/playlist/5QNRLJVyfF3igdDzWl1EN1">
+			<button type="submit">Preview</button>
+	</form>
+</template>
+
+<template name="auth">
+  <form>
+			<button type="submit">Get new auth token.</button>
+	</form>
+</template>
