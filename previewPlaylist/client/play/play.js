@@ -14,6 +14,15 @@ Template.play.rendered = function(){
   spotifyApi.getPlaylist(user, playlist, null, function(err, data){
     if(err){
       console.error(err);
+      auth_url = 'https://accounts.spotify.com/authorize'
+
+      data = {
+        response_type: 'token',
+        client_id: '7501f3e4d87546629dab55ee4ab9d3ec',
+        redirect_uri: 'http://localhost:3000/callback',
+      }
+      
+      window.location = auth_url + Helpers.toQueryString(data);
     }else{
       playlistData = data;
 
