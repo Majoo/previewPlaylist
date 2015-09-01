@@ -1,16 +1,63 @@
 /* CSS declarations go here */
+body{
+  background-image: url("img/background.jpg");
+  background-color: #e2e2e2;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  background-color: blue;
+  padding-top: 9%;
+
+  text-align: center;
+  color: white;
+  font-family: sans;
 }
 
+.heading {
+  font-size: 43px;
+}
+
+/* Home */
 input {
   width: 100%;
+  padding: 1.7%;
+  margin: 1.7%;
+
+  color: #666666;
+  border: 1px solid #2ebd59;
 }
 
-button {
-  margin-left: auto;
-  margin-right: auto;
+.btn {
+  width: 17%;
+  padding: 1%;
+  color: white;
+  background-color: #2ebd59;
+  border: none;
+  border-radius: 25%;
+}
+
+/* Play */
+button #previous {
+}
+
+button #next {
+}
+
+#albumCover {
+  width: 57%;
+  height: 57%;
+}
+
+.image-cropper {
+  border-radius: 70%;
+}
+
+.row {
+  display: table;
+}
+
+.column {
+  display: table-cell;
 }

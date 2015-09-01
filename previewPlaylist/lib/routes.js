@@ -8,10 +8,6 @@ Router.map(function(){
   });
 });
 
-Router.onStop(function(){
-  Session.set("previousLocationPath",this.location.path);
-});
-
 //This is run when access token obtained
 Router.route('/callback', function() {
   console.log('callback');
@@ -24,7 +20,6 @@ Router.route('/callback', function() {
       });
     console.log("inserted an auth token");
 
-    var previousLocationPath = Session.get("previousLocationPath");
-    this.redirect('previousLocationPath');
+    Router.go('/');
   }
 });

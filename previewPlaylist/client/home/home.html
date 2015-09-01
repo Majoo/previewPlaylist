@@ -1,17 +1,17 @@
 <template name="home">
   <div class="container">
-    <h1>PreviewMyPlaylist</h1>
+    <h1 class="heading">Preview Playlist</h1>
+    Enter a Spotify playlist URL.
 
     {{> urlForm}}
-    
+
 </div>
 </template>
 
 <template name="urlForm">
   <form>
-		  <label for="url"> Playlist URL:</label>
 			<input id="url" type="text" value="https://play.spotify.com/user/chorriballong/playlist/5QNRLJVyfF3igdDzWl1EN1">
-			<button type="submit">Preview</button>
+			<button class="btn" type="submit">Preview</button>
 	</form>
 </template>
 
