@@ -5,3 +5,12 @@
   width: 50%;
   background-color: blue;
 }
+
+input {
+  width: 100%;
+}
+
+button {
+  margin-left: auto;
+  margin-right: auto;
+}
