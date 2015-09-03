@@ -1,21 +1,23 @@
 var counter = 0;
 
 Template.play.rendered = function(){
-
       var playlistData = Session.get('playlistData');
 
-      counter = Getters.getNrOfTracks(playlistData);
-      var trackUrl = Getters.getPreviewUrl(playlistData, counter-1);
-      Session.set('albumURL', Getters.getAlbumCoverURL(Session.get('playlistData'), counter-1));
-      Session.set('currIndex', counter-1);
+      counter = Getters.getNrOfTracks(playlistData)-1;
+      var trackUrl = Getters.getPreviewUrl(playlistData, counter);
+      Session.set('albumURL', Getters.getAlbumCoverURL(Session.get('playlistData'), counter));
+      Session.set('currIndex', counter);
       Player.play(trackUrl);
+      counter--;
+      console.log(counter);
 
       setInterval(function () {
-        var trackUrl = Getters.getPreviewUrl(playlistData, counter-1);
-        Session.set('currIndex', counter-1);
-        Player.play(trackUrl)}
-        , 30000);
-
+        var trackUrl = Getters.getPreviewUrl(playlistData, counter);
+        Session.set('currIndex', counter);
+        Player.play(trackUrl);
+        counter--;
+        console.log(counter);}
+        , 18000);
 }
 
 Template.play.helpers({
@@ -29,18 +31,9 @@ Template.play.helpers({
     return Getters.getTrackName(Session.get('playlistData'), Session.get('currIndex'));
   },
   trackArtist: function(){
-    return 'Artist'
+    return Getters.getArtist(Session.get('playlistData'), Session.get('currIndex'));
   },
   albumCover: function(){
     return Getters.getAlbumCoverURL(Session.get('playlistData'), Session.get('currIndex'));
   }
 });
-
-Player = {
-  play: function(trackUrl){
-    var audioObject = new Audio(trackUrl);
-    audioObject.play();
-    counter--;
-    console.log(counter);
-  }
-}

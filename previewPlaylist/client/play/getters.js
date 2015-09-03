@@ -11,10 +11,16 @@ Getters = {
   getPreviewUrl: function(playlist, index){
     return playlist.tracks.items[index].track.preview_url;
   },
+
   getAlbumCoverURL: function(playlist, index){
     return playlist.tracks.items[index].track.album.images[0].url;
   },
+
   getTrackName: function(playlist, index){
     return playlist.tracks.items[index].track.name;
+  },
+
+  getArtist: function(playlist, index){
+    return playlist.tracks.items[index].track.artists[0].name;
   }
 }

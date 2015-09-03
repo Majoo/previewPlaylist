@@ -20,7 +20,7 @@ Router.route('/callback', function() {
       });
     console.log("inserted an auth token");
 
-    if(Session.get('submitted')){
+    if(Session.get('submitted') === 'true'){
       var user = Session.get('user');
       var playlist = Session.get('playlist');
 

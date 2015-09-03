@@ -3,7 +3,7 @@ var spotify = SpotifyApiAdapter;
 Template.urlForm.events({
 	'submit form': function(event, instance){
 		event.preventDefault();
-		Session.set('submitted', true);
+		Session.set('submitted', 'true');
 
 		var url = instance.find('input').value;
 		instance.find('input').value ='';
