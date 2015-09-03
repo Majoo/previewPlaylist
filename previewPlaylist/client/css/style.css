@@ -40,18 +40,18 @@ input {
 
 /* Play */
 button #previous {
+  border: none;
 }
 
 button #next {
+  border: none;
 }
 
-#albumCover {
-  width: 57%;
-  height: 57%;
-}
-
-.image-cropper {
-  border-radius: 70%;
+.image-cropper img{
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  padding-top: 1.7%;
 }
 
 .row {

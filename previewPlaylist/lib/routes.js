@@ -20,6 +20,14 @@ Router.route('/callback', function() {
       });
     console.log("inserted an auth token");
 
-    Router.go('/');
+    if(Session.get('submitted')){
+      var user = Session.get('user');
+      var playlist = Session.get('playlist');
+
+      SpotifyApiAdapter.getPlaylist(user, playlist);
+    }else{
+      //never reached
+      Router.go('/');
+    }
   }
 });

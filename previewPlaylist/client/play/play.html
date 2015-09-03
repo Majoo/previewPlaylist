@@ -1,13 +1,18 @@
 <template name="play">
   <div class="container">
     <h1 class=heading>{{playlistName}}</h1>
+    {{trackName}} by {{trackArtist}}
 
     <div class="row">
-      <button id="previous" class="column"></button>
-      <div class="column image-cropper">
-        <img src="{{albumCover}}" id="albumCover"/>
+      <div id="previous" class="column">
+        <img src="{{prevAlbumCover}}"/>
       </div>
-      <button id="next" class="column"></button>
+      <div class="column image-cropper">
+        <img src="{{albumCover}}"/>
+      </div>
+      <div id="next" class="column">
+        <img src="{{nextAlbumCover}}"/>
+      </div>
     </div>
 
   </div>
